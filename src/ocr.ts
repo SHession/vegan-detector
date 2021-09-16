@@ -5,7 +5,8 @@ import Tesseract from 'tesseract.js';
 export const readIngredients = ()  => Tesseract.recognize(
   './test-data/Screenshot 2021-09-16 at 11.59.19.png',
   'eng',
-//   { logger: m => console.log(m) }
+  { logger: m => console.log(m) }
 ).then(({ data: { text } }) => {
+  console.log(text);
   return text;
 })
