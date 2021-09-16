@@ -1,12 +1,14 @@
 <html>
-  <head>
-    <script src="detector.bundle.js"></script>
-  </head>
+
 <body>
   <h1>The Great Vegan Detector 🕵️‍♀️</h1>
-  <img src="./test-data/Screenshot 2021-09-16 at 11.59.19.png"/>
+  <input type="File" id="photo-picker" />
+  <img id="ingredients-photo" />
   <p id="vegan">
-    <img src="./loading-buffering.gif"/>
+    <img src="./loading-buffering.gif" />
   </p>
+  <p id="ingredients"></p>
+  <script src="detector.bundle.js"></script>
 </body>
+
 </html>
