@@ -1,5 +1,4 @@
-import { readIngredients } from "./ocr"
-import { isVegan } from "./vegan-checker";
+import { checkIfVegan } from "./vegan-checker";
 
 const filePicker = (document.querySelector("#photo-picker") as HTMLInputElement);
 const pic = (document.querySelector("#ingredients-photo") as HTMLImageElement);
@@ -11,21 +10,6 @@ filePicker.onchange =  () => {
     checkIfVegan(image)
  }
 
-const checkIfVegan = (image: string) => {
-    const ingredients = readIngredients(image).then( (ingredients: string) => {
-        (document.querySelector("#ingredients") as HTMLElement).innerHTML = ingredients;
-
-        const ingredientsAreVegan = isVegan(ingredients);
-    
-        const message = `The item is: ${ingredientsAreVegan.vegan ? "VEGAN" : "NOT VEGAN"}`;
-        const veganEl = document.querySelector("#vegan")
-        if (veganEl) veganEl.innerHTML = message;
-    
-        console.log(ingredientsAreVegan.offendingIngredients);
-    }).catch(e => console.warn(e));
-    
-}
-
 let video = (document.getElementById('video') as HTMLVideoElement);
 let canvas = (document.getElementById('canvas') as HTMLCanvasElement);
 
@@ -35,7 +19,6 @@ if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
     navigator.mediaDevices.getUserMedia({ video: true }).then(function(stream) {
         //video.src = window.URL.createObjectURL(stream);
         video!.srcObject = stream;
-        video!.play();
     });
 }
 

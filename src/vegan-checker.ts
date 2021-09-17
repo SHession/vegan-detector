@@ -1,40 +1,23 @@
-// import { ingredients } from "./resources/ingredients.json"
-const nonVeganIngredients = [
-    "Milk",
-    "Egg",
-    "Casein",
-    "Lactose",
-    "Whey",
-    "Elastin",
-    "Keratin",
-    "Gelatine",
-    "Gelatin",
-    "Aspic",
-    "Lard",
-    "Tallow",
-    "Shellac",
-    "Royal Jelly",
-    "Honey",
-    "Propolis",
-    "Vitamin D3",
-    "Albumen",
-    "Albumin",
-    "Isinglass",
-    "Cod liver oil",
-    "Pepsin",
-    "E120",
-    "E441",
-    "E542",
-    "E901",
-    "E904",
-    "E910",
-    "E920",
-    "E921",
-    "E913",
-    "E966"
-];
+import { readIngredients } from "./ocr";
+import ingredients from "./resources/ingredients.json"
+const nonVeganIngredients = ingredients.ingredients;
 
-export const isVegan = (ingredients: string) => {
+export const checkIfVegan = (image: string) => {
+    const ingredients = readIngredients(image).then( (ingredients: string) => {
+        (document.querySelector("#ingredients") as HTMLElement).innerHTML = ingredients;
+
+        const ingredientsAreVegan = isVegan(ingredients);
+    
+        const message = `The item is: ${ingredientsAreVegan.vegan ? "VEGAN" : "NOT VEGAN"}`;
+        const veganEl = document.querySelector("#vegan")
+        if (veganEl) veganEl.innerHTML = message;
+    
+        console.log(ingredientsAreVegan.offendingIngredients);
+    }).catch(e => console.warn(e));
+    
+}
+
+const isVegan = (ingredients: string) => {
     const lowerIngredients = ingredients.toLowerCase()
     let vegan = true;
     let offendingIngredients: string[] = [];

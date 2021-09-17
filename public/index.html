@@ -2,17 +2,18 @@
 
 <body>
   <h1>The Great Vegan Detector 🕵️‍♀️</h1>
-  <input type="File" id="photo-picker" />
+  <input type="file" id="photo-picker" />
+  <video id="video" width="400" height="400" autoplay></video>
+  <button id="snap">Snap Photo</button>
+  <canvas id="canvas" width="640" height="480" style="display: none;"></canvas>
   <img id="ingredients-photo" />
   <p id="vegan">
     <img src="./loading-buffering.gif" />
   </p>
   <p id="ingredients"></p>
-  <video id="video" width="640" height="480" autoplay></video>
-<button id="snap">Snap Photo</button>
-<canvas id="canvas" width="640" height="480"></canvas>
+
   <script src="detector.bundle.js"></script>
-  
+
 </body>
 
 </html>
