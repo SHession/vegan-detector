@@ -37,8 +37,9 @@
       <div class="px-4 pt-5 my-5 text-center border-bottom">
         <h1 class="display-4 fw-bold">Camera</h1>
         <div class="col-lg-6 mx-auto">
-
-          <video id="video" width="640" height="480" autoplay playsinline></video>
+          <div class="ratio ratio-16x9 mb-4">
+            <video id="video" width="640" height="480" autoplay playsinline></video>
+          </div>
           <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
             <button type="button" id="snap" class="btn btn-primary btn-lg px-4 me-sm-3">Snap Photo</button>
           </div>
@@ -70,7 +71,7 @@
       <div class="px-4 pt-5 my-5 text-center border-bottom">
         <h1 class="display-4 fw-bold">Result</h1>
         <div class="col-lg-6 mx-auto text-center">
-          <img id="ingredients-photo" class="rounded shadow-lg mw-60" />
+          <img id="ingredients-photo" class="img-fluid rounded shadow-lg mw-60" />
           <p id="vegan" class="lead mb-4"> <img src="./loading-buffering.gif" /></p>
           <p id="ingredients" class="lead mb-4"></p>
         </div>
