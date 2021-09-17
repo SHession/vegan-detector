@@ -1,19 +1,83 @@
 <html>
 
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+  <link href="style.css" rel="stylesheet">
+  <title>Vegan Detector 🕵️‍♀️</title>
+</head>
+
 <body>
-  <h1>The Great Vegan Detector 🕵️‍♀️</h1>
-  <input type="file" id="photo-picker" />
-  <video id="video" width="400" height="400" autoplay playsinline></video>
-  <button id="snap">Snap Photo</button>
-  <canvas id="canvas" width="640" height="480" style="display: none;"></canvas>
-  <img id="ingredients-photo" />
-  <p id="vegan">
-    <img src="./loading-buffering.gif" />
-  </p>
-  <p id="ingredients"></p>
+  <main>
+    <h1 class="visually-hidden">Heroes examples</h1>
 
-  <script src="detector.bundle.js"></script>
+    <div class="px-4 py-5 my-5 text-center">
+      <h1 class="display-5 fw-bold">The Great Vegan Detector 🕵️‍♀️</h1>
+      <div class="col-lg-6 mx-auto">
+        <p class="lead mb-4">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most
+          popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive
+          prebuilt components, and powerful JavaScript plugins.</p>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+          <button type="button" class="btn btn-primary btn-lg px-4 gap-3" id="camera-button">Camera</button>
 
+          <button type="button" class="btn btn-outline-secondary btn-lg px-4" id="upload-button">Upload</button>
+        </div>
+      </div>
+    </div>
+
+
+    <div id="camera" style="display: none;">
+      <div class="b-example-divider"></div>
+
+      <div class="px-4 pt-5 my-5 text-center border-bottom">
+        <h1 class="display-4 fw-bold">Camera</h1>
+        <div class="col-lg-6 mx-auto">
+
+          <video id="video" width="640" height="480" autoplay playsinline></video>
+          <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
+            <button type="button" id="snap" class="btn btn-primary btn-lg px-4 me-sm-3">Snap Photo</button>
+          </div>
+
+          <canvas id="canvas" width="640" height="480" style="display: none;"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div id="upload" style="display: none;">
+      <div class="b-example-divider"></div>
+
+      <div class="px-4 pt-5 my-5 text-center border-bottom">
+        <h1 class="display-4 fw-bold">Upload</h1>
+        <div class="col-lg-6 mx-auto">
+          <p class="lead mb-4">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s
+            most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system,
+            extensive prebuilt components, and powerful JavaScript plugins.</p>
+          <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
+            <input type="file" id="photo-picker" class="form-control-file" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="result" style="display: none;">
+      <div class="b-example-divider"></div>
+
+      <div class="px-4 pt-5 my-5 text-center border-bottom">
+        <h1 class="display-4 fw-bold">Result</h1>
+        <div class="col-lg-6 mx-auto text-center">
+          <img id="ingredients-photo" class="rounded shadow-lg mw-60" />
+          <p id="vegan" class="lead mb-4"> <img src="./loading-buffering.gif" /></p>
+          <p id="ingredients" class="lead mb-4"></p>
+        </div>
+      </div>
+    </div>
+    <script src="detector.bundle.js"></script>
+  </main>
 </body>
 
 </html>
