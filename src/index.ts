@@ -4,11 +4,12 @@ const pic = (document.querySelector("#ingredients-photo") as HTMLImageElement);
 const result = document.getElementById('result')!;
 const camera = document.getElementById('camera')!;
 const upload = document.getElementById('upload')!;
+const intro = document.getElementById('intro')!;
 
 
 const cameraButton = (document.querySelector("#camera-button") as HTMLButtonElement).addEventListener("click", () => {
     camera.style.display = "initial";
-    upload.style.display = "none";
+    intro.style.display = "none";
 
     let video = (document.getElementById('video') as HTMLVideoElement);
     let canvas = (document.getElementById('canvas') as HTMLCanvasElement);
@@ -35,7 +36,7 @@ const cameraButton = (document.querySelector("#camera-button") as HTMLButtonElem
 
 const photoButton = (document.querySelector("#upload-button") as HTMLButtonElement).addEventListener("click", () => {
     upload.style.display = "initial";
-    camera.style.display = "none";
+    intro.style.display = "none";
 
     const filePicker = (document.querySelector("#photo-picker") as HTMLInputElement);
 

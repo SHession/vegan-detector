@@ -1,8 +1,10 @@
 import { readIngredients } from "./ocr";
 import ingredients from "./resources/ingredients.json"
 const nonVeganIngredients = ingredients.ingredients;
+const spinner = document.getElementById('spinner')!;
 
 export const checkIfVegan = (image: string) => {
+    spinner.style.display = "initial";
     const ingredients = readIngredients(image).then( (ingredients: string) => {
         (document.querySelector("#ingredients") as HTMLElement).innerHTML = ingredients;
 
@@ -13,6 +15,7 @@ export const checkIfVegan = (image: string) => {
         if (veganEl) veganEl.innerHTML = message;
     
         console.log(ingredientsAreVegan.offendingIngredients);
+        spinner.style.display = "none";
     }).catch(e => console.warn(e));
     
 }

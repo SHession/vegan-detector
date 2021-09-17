@@ -14,9 +14,7 @@
 
 <body>
   <main>
-    <h1 class="visually-hidden">Heroes examples</h1>
-
-    <div class="px-4 py-5 my-5 text-center">
+    <div class="px-4 py-5 my-5 text-center" id="intro">
       <h1 class="display-5 fw-bold">The Great Vegan Detector 🕵️‍♀️</h1>
       <div class="col-lg-6 mx-auto">
         <p class="lead mb-4">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most
@@ -32,8 +30,6 @@
 
 
     <div id="camera" style="display: none;">
-      <div class="b-example-divider"></div>
-
       <div class="px-4 pt-5 my-5 text-center border-bottom">
         <h1 class="display-4 fw-bold">Camera</h1>
         <div class="col-lg-6 mx-auto">
@@ -50,8 +46,6 @@
     </div>
 
     <div id="upload" style="display: none;">
-      <div class="b-example-divider"></div>
-
       <div class="px-4 pt-5 my-5 text-center border-bottom">
         <h1 class="display-4 fw-bold">Upload</h1>
         <div class="col-lg-6 mx-auto">
@@ -71,8 +65,10 @@
       <div class="px-4 pt-5 my-5 text-center border-bottom">
         <h1 class="display-4 fw-bold">Result</h1>
         <div class="col-lg-6 mx-auto text-center">
-          <img id="ingredients-photo" class="img-fluid rounded shadow-lg mw-60" />
-          <p id="vegan" class="lead mb-4"> <img src="./loading-buffering.gif" /></p>
+          
+          <img id="ingredients-photo" class="img-fluid rounded shadow-lg mw-60 mb-3" />
+          <img id="spinner" src="./loading-buffering.gif" class="img-fluid mw-60"/>
+          <p id="vegan" class="lead mb-4"></p>
           <p id="ingredients" class="lead mb-4"></p>
         </div>
       </div>
